@@ -42,7 +42,7 @@ export class UserService {
 
   async userByEmail(email: string): Promise<User> {
     const user = await this.userRepository.findOne({ email });
-    if (!user) throw new NotFoundException({ message: 'No such user' });
+    if (!user) throw new NotFoundException();
     return user;
   }
 
